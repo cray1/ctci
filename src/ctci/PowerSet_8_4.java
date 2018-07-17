@@ -32,6 +32,7 @@ public class PowerSet_8_4 {
 	static <T> Set<Set<T>> powerset(Set<T> Set) {
 		  Set<Set<T>> SetOfSets = new HashSet<Set<T>>();
 		  int max = (1 << Set.size())-1;
+		  System.out.println("max: "+max);
 		  for(int i=0; i<max; i++) {
 			  Set<T> subsets = convertIntToSubset(i, Set);
 			  SetOfSets.add(subsets);
@@ -59,7 +60,9 @@ public class PowerSet_8_4 {
 		
 		Set<Character> s1 = new HashSet<Character>();
 		s1.add('a'); s1.add('b'); s1.add('c'); s1.add('d');
-		
+		s1.add('e'); s1.add('f'); s1.add('g'); s1.add('h');
+		s1.add('i'); s1.add('j'); s1.add('k'); s1.add('l');
+		s1.add('m'); s1.add('n'); s1.add('o'); s1.add('p');
 		Set<Set<Character>> ps = powerset(s1);
 		printSet(ps);
 	}
