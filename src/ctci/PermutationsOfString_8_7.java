@@ -13,14 +13,11 @@ public class PermutationsOfString_8_7 {
 	}
 	
 	static void permute(Set<String> perms, String s, String chosen) {
-		//System.out.println("permute(" + s +", " + chosen+")");
 		if(s.length() ==0)  
 			perms.add(chosen);  
-		else {
-			for(char c: s.toCharArray() ) {
+		else 
+			for(char c: s.toCharArray() )
 				permute(perms, s.replace(""+c, ""), chosen +c);
-			}
-		}
 	}
 	
 	//helper stuff below
@@ -38,7 +35,7 @@ public class PermutationsOfString_8_7 {
 	}
 
 	public static void main(String[] args) {
-		String s = "abcdefghij";
+		String s = "abcd";
 		Set<String> perms = permute(s);
 		System.out.println("Length(s) = "+s.length());
 		System.out.println("number of permutations (actual): " + perms.size());
